@@ -1,0 +1,123 @@
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
+
+body {
+    background-color: #E9E8E7;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.weather-title {
+    color: #2D6476;
+    background-color: #E9E8E7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.weather-container {
+    background-color: #3A7F96;
+    color: white;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px 30px;
+    border-radius: 15px;
+}
+
+.place {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 20px;
+    text-align: right;
+}
+
+.weather-degree {
+    font-size: 72px;
+}
+
+.weather-icon {
+    font-size: 108px;
+    text-align: center;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    height: 140px;
+    align-items: center;
+}
+
+#loading.d-none {
+    display: none;
+}
+
+@media (max-width: 565px) {
+    .weather-degree {
+        font-size: 30px;
+    }
+    .weather-icon {
+        font-size: 48px;
+    }
+    .place, .date  {
+        font-size: 16px;
+    }
+}
